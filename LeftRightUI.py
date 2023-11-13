@@ -192,11 +192,12 @@ with chat_placeholder.container():
 with st.container():
     if  st.session_state.count == 0:
         user_message = st.text_input("「原子力発電は廃止すべき」という意見に対して、あなたの意見を入力して送信ボタンを押してください", key="user_message")
-    elif st.session_state.count == 4:
+        st.button("送信", on_click=on_input_change)
+    elif st.session_state.count == 5:
         st.write("意見交換はこれで終了です。URLをクリックしてください。")
     else:
         user_message = st.text_input("あなたの意見を入力して送信ボタンを押してください", key="user_message")
-    st.button("送信", on_click=on_input_change)
+        st.button("送信", on_click=on_input_change)
 # 質問入力欄 上とどっちが良いか    
 #if user_message := st.chat_input("聞きたいことを入力してね！", key="user_message"):
 #    on_input_change()
