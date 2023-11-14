@@ -1,4 +1,5 @@
 # Fairness → binding
+# gpt4 -> gpt4 preview
 # ライブラリをインポート
 import streamlit as st
 from streamlit_chat import message
@@ -109,7 +110,7 @@ prompt = ChatPromptTemplate.from_messages([
 def load_conversation():
     if not hasattr(st.session_state, "conversation"):
         llm = ChatOpenAI(
-            model_name="gpt-4",
+            model_name="gpt-4-1106-preview",
             temperature=0
         )
         memory = ConversationBufferMemory(return_messages=True)
